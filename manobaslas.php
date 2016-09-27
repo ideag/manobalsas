@@ -82,6 +82,7 @@ class Scrapper_Manobalsas {
 			unset( $data[$key]['comments'] );
 		}
 		$fp = fopen('data.csv', 'w');
+		fputcsv($fp, array_keys( $data[0] ) );
 		foreach ($data as $fields) {
 		    fputcsv($fp, $fields);
 		}
@@ -89,7 +90,7 @@ class Scrapper_Manobalsas {
 		echo 'Done.';
 	}
 }
-
+Scrapper_Manobalsas::flatten();
 // collect
 // flatten
 ?>
